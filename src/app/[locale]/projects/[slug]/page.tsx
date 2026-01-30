@@ -227,17 +227,28 @@ export default function ProjectDetailPage() {
                 <h2 className="text-xl font-semibold text-foreground mb-4">
                   {t('responsibilities')}
                 </h2>
-                <ul className="space-y-3">
-                  {project.responsibilities[locale].map((responsibility, index) => (
-                    <li
-                      key={index}
-                      className="flex items-start gap-3 text-muted-foreground"
-                    >
-                      <span className="w-1.5 h-1.5 bg-foreground rounded-full mt-2 flex-shrink-0" />
-                      {responsibility}
-                    </li>
+                <div className="space-y-6">
+                  {project.responsibilities.map((category, categoryIndex) => (
+                    <div key={categoryIndex}>
+                      {/* Category Title */}
+                      <h3 className="text-base font-medium text-foreground mb-2">
+                        {category.category[locale]}
+                      </h3>
+                      {/* Items List */}
+                      <ul className="space-y-1.5 pl-1">
+                        {category.items[locale].map((item, itemIndex) => (
+                          <li
+                            key={itemIndex}
+                            className="text-sm text-muted-foreground flex items-start gap-2"
+                          >
+                            <span className="text-muted-foreground/60 mt-1.5">•</span>
+                            <span className="flex-1 leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
               {/* Folder Structure */}

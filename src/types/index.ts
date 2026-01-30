@@ -28,6 +28,17 @@ export interface TechImplementationItem {
   };
 }
 
+export interface ResponsibilityCategory {
+  category: {
+    ko: string;
+    en: string;
+  };
+  items: {
+    ko: string[];
+    en: string[];
+  };
+}
+
 export interface FolderItem {
   name: string;
   description?: {
@@ -61,10 +72,7 @@ export interface Project {
     ko: string[];
     en: string[];
   };
-  responsibilities: {
-    ko: string[];
-    en: string[];
-  };
+  responsibilities: ResponsibilityCategory[];
   link?: string;
   // 상세 정보 (프로젝트 소개 페이지용)
   detailedDescription?: {

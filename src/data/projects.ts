@@ -40,10 +40,119 @@ export const projects: Project[] = [
         'FCM push notification system implementation',
       ],
     },
-    responsibilities: {
-      ko: ['전체 관리자 페이지 Frontend 구현', '관리자 페이지 CRUD api 구축', 'BullMQ 작업 큐 설계', 'RBAC 기반 권한 시스템 구현'],
-      en: ['Full admin page Frontend implementation', 'Admin page CRUD API development', 'BullMQ job queue design', 'RBAC permission system implementation'],
-    },
+    responsibilities: [
+      {
+        category: { ko: '전체', en: 'Overall' },
+        items: {
+          ko: [
+            '전체 프로젝트 풀스택 참여',
+            'React 19 + TypeScript 기반 웹 프론트엔드 전체 구현',
+            'NestJS + Fastify 백엔드 API 서버 구축',
+            'Prisma 스키마 설계',
+          ],
+          en: [
+            'Full-stack participation in entire project',
+            'Full web frontend implementation with React 19 + TypeScript',
+            'NestJS + Fastify backend API server development',
+            'Prisma schema design',
+          ],
+        },
+      },
+      {
+        category: { ko: '인증 시스템', en: 'Authentication System' },
+        items: {
+          ko: [
+            'Better Auth 기반 OAuth 로그인 (Google, Kakao)',
+            'JWT 토큰 인증 (모바일/API용) + 쿠키 세션 인증 (웹용)',
+            '토큰 자동 갱신 (axios interceptor, _retry 플래그로 무한 루프 방지)',
+            '역할 기반 접근 제어 (INSTITUTION_ADMIN, CAREGIVER, GUARDIAN, ADMIN)',
+          ],
+          en: [
+            'Better Auth based OAuth login (Google, Kakao)',
+            'JWT token authentication (mobile/API) + cookie session authentication (web)',
+            'Automatic token refresh (axios interceptor, _retry flag to prevent infinite loop)',
+            'Role-based access control (INSTITUTION_ADMIN, CAREGIVER, GUARDIAN, ADMIN)',
+          ],
+        },
+      },
+      {
+        category: { ko: '시니어 케어로그 시스템', en: 'Senior Care Log System' },
+        items: {
+          ko: [
+            '음성 녹음 → AI 분석 → 케어로그(돌봄 일지) 생성 파이프라인',
+            'BullMQ 기반 비동기 오디오 분석 큐 처리',
+            'OpenAI Whisper STT + GPT 요약 연동',
+            '일지 CRUD + 필터링/검색 API',
+          ],
+          en: [
+            'Voice recording → AI analysis → Care log creation pipeline',
+            'BullMQ based async audio analysis queue processing',
+            'OpenAI Whisper STT + GPT summary integration',
+            'Care log CRUD + filtering/search API',
+          ],
+        },
+      },
+      {
+        category: { ko: '보호사 출퇴근 관리 시스템', en: 'Caregiver Attendance Management' },
+        items: {
+          ko: [
+            '출퇴근 체크인/체크아웃 UI 및 API',
+            '근무 수정 요청/승인 워크플로우 전체 구현',
+            '부서별 출퇴근 통계',
+          ],
+          en: [
+            'Check-in/out UI and API',
+            'Work modification request/approval workflow full implementation',
+            'Department-wise attendance statistics',
+          ],
+        },
+      },
+      {
+        category: { ko: '파일 업로드', en: 'File Upload' },
+        items: {
+          ko: [
+            'AWS S3 Presigned URL 방식 구현 (서버 부담 최소화)',
+            '오디오 파일/프로필 이미지 업로드 지원',
+            'S3 URL 유효성 검증 (NestJS Pipe)',
+          ],
+          en: [
+            'AWS S3 Presigned URL implementation (minimizing server load)',
+            'Audio file/profile image upload support',
+            'S3 URL validation (NestJS Pipe)',
+          ],
+        },
+      },
+      {
+        category: { ko: '알림 시스템', en: 'Notification System' },
+        items: {
+          ko: [
+            'FCM 푸시 알림 발송 (BullMQ 비동기 처리)',
+            'data-only 메시지로 백그라운드 알림 처리',
+            '알림 히스토리 관리 API',
+          ],
+          en: [
+            'FCM push notification (BullMQ async processing)',
+            'Background notification handling with data-only messages',
+            'Notification history management API',
+          ],
+        },
+      },
+      {
+        category: { ko: '초대 시스템', en: 'Invitation System' },
+        items: {
+          ko: [
+            '자체 딥링크 구현 (Branch.io 대체)',
+            '암호화된 초대 토큰 생성/검증',
+            '보호자 초대 플로우 구현',
+          ],
+          en: [
+            'Custom deep link implementation (Branch.io alternative)',
+            'Encrypted invitation token generation/verification',
+            'Guardian invitation flow implementation',
+          ],
+        },
+      },
+    ],
     detailedDescription: {
       ko: '솔브릿지는 요양·돌봄 조직을 위한 B2B SaaS 솔루션입니다. 보호사 배정, 보호자 관리, 기관별 대시보드, 업무 통계 등 다양한 기능을 제공합니다. React 19의 최신 기능과 Nest.js의 안정적인 백엔드 아키텍처를 결합하여 엔터프라이즈급 서비스를 구현했습니다.',
       en: 'SoulBridge is a B2B SaaS solution for care organizations. It provides various features including caregiver assignment, guardian management, institution dashboards, and work statistics. Combined React 19 latest features with Nest.js stable backend architecture for enterprise-level service.',
@@ -404,10 +513,85 @@ export const projects: Project[] = [
         'Recruitment system (application management)',
       ],
     },
-    responsibilities: {
-      ko: ['전체 프로젝트 구현', 'ERD 설계', '관리자 페이지 Full-Stack 구현', '다국어 번역 관리 시스템 구축'],
-      en: ['Full project implementation', 'ERD design', 'Admin page Full-Stack implementation', 'Multilingual translation management system'],
-    },
+    responsibilities: [
+      {
+        category: { ko: '전체', en: 'Overall' },
+        items: {
+          ko: [
+            '전체 더블티 홈페이지 구현',
+            'Prisma 스키마 설계',
+            '더블티 홈페이지 화면 커스텀 관리자 페이지 DB설계 및 로직 구현',
+          ],
+          en: [
+            'Full DoublT homepage implementation',
+            'Prisma schema design',
+            'Custom admin page DB design and logic for DoublT homepage',
+          ],
+        },
+      },
+      {
+        category: { ko: '채용 시스템', en: 'Recruitment System' },
+        items: {
+          ko: [
+            'Prisma 기반 채용 DB 스키마 설계 (지원자, 지원서, 채용공고, 프로세스)',
+            '지원서 제출 API (트랜잭션 처리, 90일 중복 방지, 이메일 발송)',
+            'React Hook Form + Atomic Design 지원서 폼 UI 구현',
+            '관리자 채용 공고/지원자 관리 기능 (CRUD + 필터링)',
+          ],
+          en: [
+            'Prisma-based recruitment DB schema (applicants, applications, job postings, processes)',
+            'Application submission API (transaction, 90-day duplicate prevention, email)',
+            'Application form UI with React Hook Form + Atomic Design',
+            'Admin job posting/applicant management (CRUD + filtering)',
+          ],
+        },
+      },
+      {
+        category: { ko: '인증 시스템', en: 'Authentication System' },
+        items: {
+          ko: [
+            'NextAuth.js 기반 JWT 세션 인증',
+            '이메일 인증 (인증 코드 발송/검증/만료 처리)',
+            '역할 기반 접근 제어 (ADMIN/USER)',
+          ],
+          en: [
+            'NextAuth.js based JWT session authentication',
+            'Email verification (code sending/validation/expiration)',
+            'Role-based access control (ADMIN/USER)',
+          ],
+        },
+      },
+      {
+        category: { ko: '파일 업로드', en: 'File Upload' },
+        items: {
+          ko: [
+            'AWS S3 Presigned URL 방식 구현',
+            '서버 부담 최소화 (클라이언트 직접 업로드)',
+            '이력서/포트폴리오/증명사진 업로드 지원',
+          ],
+          en: [
+            'AWS S3 Presigned URL implementation',
+            'Minimized server load (direct client upload)',
+            'Resume/portfolio/photo upload support',
+          ],
+        },
+      },
+      {
+        category: { ko: '다국어 시스템', en: 'Multilingual System' },
+        items: {
+          ko: [
+            'DB 기반 i18n 번역 관리 (런타임 로드)',
+            '관리자 번역 수정 기능',
+            'ko/en 다국어 라우팅',
+          ],
+          en: [
+            'DB-based i18n translation management (runtime load)',
+            'Admin translation editing functionality',
+            'ko/en multilingual routing',
+          ],
+        },
+      },
+    ],
     link: 'https://www.doublt.com/ko/main',
     detailedDescription: {
       ko: '더블티 공식 홈페이지는 기업의 B2B 솔루션과 브랜드 아이덴티티를 효과적으로 전달하기 위해 기획된 프로젝트입니다. Next.js 14의 App Router를 활용한 SSR로 SEO를 최적화하고, 관리자가 콘텐츠와 번역을 직접 관리할 수 있는 CMS를 구축했습니다.',
@@ -738,10 +922,53 @@ export const projects: Project[] = [
         'Permission-based route protection',
       ],
     },
-    responsibilities: {
-      ko: ['전자결재 시스템 FE 구현', '근태관리 시스템 FE 구현', 'Axios 인터셉터 기반 API 에러 중앙 처리', 'JWT 토큰 자동 갱신 로직'],
-      en: ['Electronic approval system FE', 'Attendance management FE', 'Axios interceptor based API error centralization', 'JWT token auto-refresh logic'],
-    },
+    responsibilities: [
+      {
+        category: { ko: '전자결재 시스템', en: 'Electronic Approval System' },
+        items: {
+          ko: [
+            '기안 작성/수정/삭제 및 결재선 관리 UI 구현',
+            '순차/병렬/이중병렬 결재 타입별 분기 처리',
+            'API 연동 및 복잡한 상태 관리',
+          ],
+          en: [
+            'Draft creation/edit/delete and approval line management UI',
+            'Sequential/parallel/dual-parallel approval type branching',
+            'API integration and complex state management',
+          ],
+        },
+      },
+      {
+        category: { ko: '근태관리 시스템', en: 'Attendance Management System' },
+        items: {
+          ko: [
+            '출퇴근 체크인/아웃, 유연근로 등 실시간 상태 표시',
+            '휴가/근무 요청 폼 및 승인 플로우 구현',
+            'API 모듈 설계 및 유지보수',
+          ],
+          en: [
+            'Check-in/out, flexible work real-time status display',
+            'Leave/work request form and approval flow implementation',
+            'API module design and maintenance',
+          ],
+        },
+      },
+      {
+        category: { ko: '공통 아키텍처', en: 'Common Architecture' },
+        items: {
+          ko: [
+            'Axios 인터셉터 기반 API 에러 중앙 처리 구현',
+            'JWT 토큰 자동 갱신 로직 (동시 요청 큐 처리)',
+            'React Query + Context 기반 상태 관리 아키텍처 설계',
+          ],
+          en: [
+            'Axios interceptor based API error centralization',
+            'JWT token auto-refresh logic (concurrent request queue handling)',
+            'React Query + Context based state management architecture design',
+          ],
+        },
+      },
+    ],
     detailedDescription: {
       ko: 'DoubltWorks는 기업용 통합 업무 시스템으로, 전자결재, 근태관리, 인사관리, CRM, ERP 등의 기능을 하나의 플랫폼에서 제공합니다. React 19와 최신 상태 관리 패턴을 적용하여 대규모 엔터프라이즈 애플리케이션을 구현했습니다.',
       en: 'DoubltWorks is an enterprise integrated work system providing electronic approval, attendance, HR, CRM, and ERP features in one platform. Implemented large-scale enterprise application with React 19 and modern state management patterns.',
@@ -974,10 +1201,76 @@ export const projects: Project[] = [
         'Infinite scroll implementation',
       ],
     },
-    responsibilities: {
-      ko: ['VOC 조회 칸반보드 및 테이블 형식 FE 구현', 'VOC 설정 화면 FE 구현', '통계 화면 FE 구현'],
-      en: ['VOC inquiry Kanban board and table FE', 'VOC settings screen FE', 'Statistics screen FE'],
-    },
+    responsibilities: [
+      {
+        category: { ko: 'VOC 조회 시스템', en: 'VOC Inquiry System' },
+        items: {
+          ko: [
+            '칸반보드 뷰 구현: VOC 상태코드별 그룹화 + Intersection Observer 기반 무한 스크롤',
+            '테이블 뷰 구현: 다중 필드 정렬 로직 (접수일/마감일 독립 정렬, 3단계 상태 전환)',
+            'React Query 무한 쿼리: useInfiniteQuery + getNextPageParam으로 페이지네이션 최적화',
+            'MobX 연동: vocProcessingStore와 observer 패턴으로 필터 조건 실시간 동기화',
+          ],
+          en: [
+            'Kanban board view: VOC status grouping + Intersection Observer infinite scroll',
+            'Table view: Multi-field sorting logic (receipt/deadline independent sort, 3-state toggle)',
+            'React Query infinite query: useInfiniteQuery + getNextPageParam pagination optimization',
+            'MobX integration: vocProcessingStore + observer pattern for real-time filter sync',
+          ],
+        },
+      },
+      {
+        category: { ko: 'VOC 설정 화면', en: 'VOC Settings Screen' },
+        items: {
+          ko: [
+            'VOC 유형 관리: CRUD + 드래그 앤 드롭 순서 변경 (react-dnd)',
+            'DnD 최적화: DOM Rect 기반 마우스 위치 판정, 1/4 임계값 이상 드래그 시에만 위치 변경',
+            '부서별 배정자 관리: AutoComplete 검색 + 권한 기반 접근 제어',
+            'MobX + Context 패턴: 편집 모드 상태 관리, 변경된 항목만 추출하여 API 요청 최적화',
+          ],
+          en: [
+            'VOC type management: CRUD + drag-and-drop ordering (react-dnd)',
+            'DnD optimization: DOM Rect mouse position detection, position change only beyond 1/4 threshold',
+            'Department assignee management: AutoComplete search + permission-based access control',
+            'MobX + Context pattern: Edit mode state management, extract only changed items for API optimization',
+          ],
+        },
+      },
+      {
+        category: { ko: '통계 화면', en: 'Statistics Screen' },
+        items: {
+          ko: [
+            'VOC 통계 대시보드: 처리 현황, 유형별/부서별/월별 분석 등 14개 통계 지표 UI 구현',
+            'recharts 기반 데이터 시각화: 차트 컴포넌트 연동 및 반응형 처리',
+            '엑셀 내보내기 기능: XLSX 라이브러리 + React 18 createRoot 동적 렌더링',
+            '복합 필터 시스템: FilterDrawer + React Hook Form 연동 (기간/부서/유형/채널 등 다중 조건)',
+          ],
+          en: [
+            'VOC statistics dashboard: 14 statistical indicators UI (processing status, type/dept/monthly analysis)',
+            'recharts data visualization: Chart component integration and responsive handling',
+            'Excel export: XLSX library + React 18 createRoot dynamic rendering',
+            'Complex filter system: FilterDrawer + React Hook Form (period/dept/type/channel multi-conditions)',
+          ],
+        },
+      },
+      {
+        category: { ko: '공통 컴포넌트', en: 'Common Components' },
+        items: {
+          ko: [
+            'FilterDrawer 컴포넌트: useFilterDrawer 훅으로 필터 상태 추상화',
+            'StatisticsTable: Compound Component 패턴, 복합 헤더 지원',
+            'useIntersection 훅: Intersection Observer API 래핑, 무한 스크롤 재사용',
+            'EditorViewer 공통화: react-quill 기반 에디터/뷰어 분리',
+          ],
+          en: [
+            'FilterDrawer component: Filter state abstraction with useFilterDrawer hook',
+            'StatisticsTable: Compound Component pattern, complex header support',
+            'useIntersection hook: Intersection Observer API wrapper, reusable infinite scroll',
+            'EditorViewer: react-quill based editor/viewer separation',
+          ],
+        },
+      },
+    ],
     detailedDescription: {
       ko: '한국농어촌공사의 민원(VOC)을 체계적으로 관리하기 위한 시스템입니다. 칸반보드 형태의 직관적인 UI와 다양한 필터링, 통계 기능을 제공하여 민원 처리 현황을 실시간으로 파악할 수 있습니다.',
       en: 'A system for systematically managing VOC (Voice of Customer) for Korea Rural Community Corporation. Provides intuitive Kanban board UI with various filtering and statistics features for real-time complaint status monitoring.',
@@ -1266,10 +1559,110 @@ export const projects: Project[] = [
         'Test result PDF download',
       ],
     },
-    responsibilities: {
-      ko: ['전체 프론트엔드 설계 및 구현', 'Redux-Saga 기반 비동기 상태 관리', 'Chart.js + Recharts 데이터 시각화'],
-      en: ['Full frontend design and implementation', 'Redux-Saga based async state management', 'Chart.js + Recharts data visualization'],
-    },
+    responsibilities: [
+      {
+        category: { ko: '전체', en: 'Overall' },
+        items: {
+          ko: [
+            '전체 프론트엔드 설계 및 구현 (100%)',
+            '서비스 기획 및 사용자 플로우 설계 (100%)',
+            'UI/UX 디자인 (100%)',
+            'Redux + Redux-Saga 상태 관리 아키텍처 설계',
+          ],
+          en: [
+            'Full frontend design and implementation (100%)',
+            'Service planning and user flow design (100%)',
+            'UI/UX design (100%)',
+            'Redux + Redux-Saga state management architecture design',
+          ],
+        },
+      },
+      {
+        category: { ko: '심리검사 시스템', en: 'Psychological Test System' },
+        items: {
+          ko: [
+            '검사 문항 페이지네이션 (10문항씩 / 파트별 진행)',
+            '단일 선택 / 다중 선택 답변 유형 컴포넌트 구현',
+            '자동 스크롤 UX (답변 선택 시 다음 문항으로 이동)',
+            '검사 진행 상태 localStorage 저장 (이어하기 기능)',
+            'Redux-Saga 기반 검사 시작/완료 API 비동기 처리',
+          ],
+          en: [
+            'Test question pagination (10 questions per page / part-based progress)',
+            'Single/multiple choice answer type component implementation',
+            'Auto-scroll UX (move to next question on answer selection)',
+            'Test progress localStorage save (resume feature)',
+            'Redux-Saga based test start/complete API async processing',
+          ],
+        },
+      },
+      {
+        category: { ko: '검사 결과 시각화', en: 'Result Visualization' },
+        items: {
+          ko: [
+            'Chart.js + Recharts 이중 차트 라이브러리 활용',
+            'Holland 유형(R/I/A/S/E/C) 레이더 차트 구현',
+            '세부 유형별 바 차트 (흥미/역량/직업선호)',
+            '진로발달 프로파일 수평 바 차트',
+            'SVG 커스텀 헥사곤 아이콘 축 라벨 렌더링',
+            'Intersection Observer 기반 스크롤 애니메이션',
+          ],
+          en: [
+            'Chart.js + Recharts dual chart library utilization',
+            'Holland type (R/I/A/S/E/C) radar chart implementation',
+            'Detail type bar charts (interest/competency/job preference)',
+            'Career development profile horizontal bar chart',
+            'SVG custom hexagon icon axis label rendering',
+            'Intersection Observer based scroll animation',
+          ],
+        },
+      },
+      {
+        category: { ko: '개인정보 입력 시스템', en: 'Personal Info Input System' },
+        items: {
+          ko: [
+            'MUI 기반 입력 폼 UI 구현 (이름, 생년월일, 학교, 학년/반/번호, 성별)',
+            '학교명 Autocomplete 자동완성 기능',
+            '개인정보 수집 동의 UI 및 Yup 기반 유효성 검사',
+          ],
+          en: [
+            'MUI based input form UI (name, birthdate, school, grade/class/number, gender)',
+            'School name Autocomplete auto-complete',
+            'Privacy consent UI and Yup based validation',
+          ],
+        },
+      },
+      {
+        category: { ko: '관리자 시스템', en: 'Admin System' },
+        items: {
+          ko: [
+            '관리자 로그인 인증',
+            '검사 발급 현황 조회 페이지',
+            'PDF 결과지 조회 기능',
+          ],
+          en: [
+            'Admin login authentication',
+            'Test issuance status page',
+            'PDF result viewing functionality',
+          ],
+        },
+      },
+      {
+        category: { ko: '재사용 컴포넌트 설계', en: 'Reusable Component Design' },
+        items: {
+          ko: [
+            '15개+ 공용 컴포넌트 개발 (CustomExamGroup, ModalAlert, Loading 등)',
+            '컨테이너-프레젠테이션 패턴 적용',
+            'React.lazy + Suspense 코드 스플리팅',
+          ],
+          en: [
+            '15+ common components (CustomExamGroup, ModalAlert, Loading, etc.)',
+            'Container-Presentation pattern applied',
+            'React.lazy + Suspense code splitting',
+          ],
+        },
+      },
+    ],
     detailedDescription: {
       ko: '방송통신고등학교 학생들을 위한 인성·진로 온라인검사 시스템입니다. 학생들이 개인정보를 입력하고, 심리검사를 진행하며, 검사 결과(진로 유형, 진로발달 프로파일 등)를 시각화된 형태로 확인할 수 있습니다.',
       en: 'An online personality and career test system for broadcasting high school students. Students can enter personal info, take psychological tests, and view results (career type, career development profile) in visualized format.',
@@ -1501,10 +1894,126 @@ export const projects: Project[] = [
         'Responsive DatePicker (desktop/mobile)',
       ],
     },
-    responsibilities: {
-      ko: ['전체 기획 및 프론트엔드 개발', '반응형 UI 구현', '관리자 대시보드 구현'],
-      en: ['Full planning and frontend development', 'Responsive UI implementation', 'Admin dashboard implementation'],
-    },
+    responsibilities: [
+      {
+        category: { ko: '전체', en: 'Overall' },
+        items: {
+          ko: [
+            '전체 프론트엔드 설계 및 구현 (100%)',
+            '서비스 기획 및 사용자 플로우 설계 (100%)',
+            'UI/UX 디자인 (100%)',
+            'Next.js + Redux-Saga 아키텍처 설계',
+          ],
+          en: [
+            'Full frontend design and implementation (100%)',
+            'Service planning and user flow design (100%)',
+            'UI/UX design (100%)',
+            'Next.js + Redux-Saga architecture design',
+          ],
+        },
+      },
+      {
+        category: { ko: '예약 시스템', en: 'Reservation System' },
+        items: {
+          ko: [
+            '접속번호 입력 및 검증 플로우 구현',
+            '반응형 DatePicker (데스크톱: 달력 전체 / 모바일: 팝업)',
+            '시간대 선택 UI (오전/오후 구분, 20분 단위)',
+            '예약 불가 시간 실시간 비활성화 처리',
+            '주말/공휴일/30일 이후 날짜 비활성화 로직',
+            '검사명 선택 모달 컴포넌트',
+            '예약 완료 확인 페이지',
+          ],
+          en: [
+            'Access code input and verification flow',
+            'Responsive DatePicker (desktop: full calendar / mobile: popup)',
+            'Time slot selection UI (AM/PM, 20-minute intervals)',
+            'Real-time unavailable time slot deactivation',
+            'Weekend/holiday/30+ days date deactivation logic',
+            'Test name selection modal component',
+            'Reservation confirmation page',
+          ],
+        },
+      },
+      {
+        category: { ko: '예약 조회/관리', en: 'Reservation Management' },
+        items: {
+          ko: [
+            '휴대폰 번호 기반 내 예약 조회',
+            '비밀번호 확인 후 예약 취소 기능',
+            'Dialog 기반 삭제 확인 UI',
+          ],
+          en: [
+            'Phone number based reservation lookup',
+            'Password verified reservation cancellation',
+            'Dialog based delete confirmation UI',
+          ],
+        },
+      },
+      {
+        category: { ko: '관리자 대시보드', en: 'Admin Dashboard' },
+        items: {
+          ko: [
+            'MUI Table 기반 전체 예약 목록 테이블',
+            '컬럼별 정렬 기능 (stableSort, getComparator)',
+            '다중 필터 조합 (상태 + 예약자명/피검자명/검사명/날짜)',
+            '상담 완료/미완료 상태 토글 버튼',
+            'Collapse 기반 상세 정보 펼치기',
+            '상담 기록 작성/수정 TextField',
+            '커스텀 페이지네이션 (pageSize 선택, 이전/다음)',
+            'PDF 파일 체크박스 선택 및 다운로드',
+            'localStorage 기반 관리자 세션 관리',
+          ],
+          en: [
+            'MUI Table based full reservation list',
+            'Column sorting (stableSort, getComparator)',
+            'Multiple filter combination (status + reserver/testee/test name/date)',
+            'Consultation complete/incomplete toggle',
+            'Collapse based detail expansion',
+            'Consultation record create/edit TextField',
+            'Custom pagination (pageSize selection, prev/next)',
+            'PDF file checkbox selection and download',
+            'localStorage based admin session management',
+          ],
+        },
+      },
+      {
+        category: { ko: '상태 관리 아키텍처', en: 'State Management Architecture' },
+        items: {
+          ko: [
+            '7개 Redux-Saga 모듈 설계 (예약, 날짜, 조회, 삭제, 관리자 등)',
+            'Immer 기반 불변성 관리',
+            '환경별 빌드 설정 (env-cmd로 dev/prod 분리)',
+            '커스텀 로거 미들웨어 (개발 환경 전용)',
+          ],
+          en: [
+            '7 Redux-Saga modules design (reservation, date, lookup, delete, admin, etc.)',
+            'Immer based immutability management',
+            'Environment-based build config (env-cmd dev/prod split)',
+            'Custom logger middleware (dev environment only)',
+          ],
+        },
+      },
+      {
+        category: { ko: '재사용 컴포넌트 설계', en: 'Reusable Component Design' },
+        items: {
+          ko: [
+            '12개 공용 컴포넌트 개발',
+            'DatePickerCustom, TimePickerCustom',
+            'PaginationCustom, EnhancedTableHead',
+            'DialogAlert, ModalAlert, Loading 등',
+            'classnames 라이브러리로 조건부 스타일링',
+          ],
+          en: [
+            '12 common components development',
+            'DatePickerCustom, TimePickerCustom',
+            'PaginationCustom, EnhancedTableHead',
+            'DialogAlert, ModalAlert, Loading, etc.',
+            'Conditional styling with classnames library',
+          ],
+        },
+      },
+    ],
     link: 'http://counsel.guidance.co.kr:7100/',
     detailedDescription: {
       ko: '학교표준화검사를 실시한 자녀의 결과를 바탕으로 학부모님께 15분 심리검사 분석서비스(무료)를 제공하는 예약 관리 시스템입니다. Next.js + Redux-Saga 기반으로 구현되었습니다.',
@@ -1750,10 +2259,146 @@ export const projects: Project[] = [
         '3 language support (English, Uzbek, Russian)',
       ],
     },
-    responsibilities: {
-      ko: ['입출금 시스템 전체 구현', '다국어 시스템 구축', '메인 페이지 및 공지 시스템', '마이페이지 자산 관리', '반응형 UI 전체 작업'],
-      en: ['Full deposit/withdrawal system', 'Multilingual system setup', 'Main page and notice system', 'My page asset management', 'Full responsive UI work'],
-    },
+    responsibilities: [
+      {
+        category: { ko: '입출금 시스템', en: 'Deposit/Withdrawal System' },
+        items: {
+          ko: [
+            'Sum(법정화폐) 입출금 전체 플로우 구현 (UI, API 연동, 유효성 검사)',
+            '입출금 input 유효성 체크 및 min/max API 연동',
+            'available balance 계산 로직 (balance - pending_withdrawal_amount)',
+            '입금/출금 거절 페이지 및 펜딩 화면 구현',
+            '모바일 메뉴창에 출금 관련 버튼 추가',
+          ],
+          en: [
+            'Sum (fiat) deposit/withdrawal full flow (UI, API, validation)',
+            'Deposit/withdrawal input validation and min/max API integration',
+            'Available balance calculation (balance - pending_withdrawal_amount)',
+            'Deposit/withdrawal rejection page and pending screen',
+            'Added withdrawal buttons in mobile menu',
+          ],
+        },
+      },
+      {
+        category: { ko: '다국어 시스템', en: 'Multilingual System' },
+        items: {
+          ko: [
+            '러시아어(RU), 우즈베키스탄어(UZ) 언어팩 추가 및 형식 정리',
+            'FAQ, 공지사항 등 콘텐츠 언어별 API 연동',
+            '모바일에서 언어 선택 시 즉시 적용되도록 수정',
+            '푸터 언어별 링크 분기 처리',
+          ],
+          en: [
+            'Russian (RU), Uzbek (UZ) language pack addition and formatting',
+            'FAQ, notice content language-specific API integration',
+            'Mobile language selection instant apply',
+            'Footer language-specific link branching',
+          ],
+        },
+      },
+      {
+        category: { ko: '메인 페이지 & 공지 시스템', en: 'Main Page & Notice System' },
+        items: {
+          ko: [
+            '메인 화면 공지사항(Notice) 배너 구현 및 애니메이션 처리',
+            '팝업창 구현 (오늘 다시보지 않기 로직, 로컬스토리지 만료일 관리)',
+            '메인 테이블 정렬 기능 구현 및 버그 수정 (정렬과 검색 동시 동작)',
+            '메인 모바일 화면 코인 이미지 추가',
+          ],
+          en: [
+            'Main notice banner implementation and animation',
+            'Popup implementation (do not show today, localStorage expiration)',
+            'Main table sorting feature and bug fix (sort + search)',
+            'Main mobile screen coin image addition',
+          ],
+        },
+      },
+      {
+        category: { ko: '마이페이지 (자산 관리)', en: 'My Page (Asset Management)' },
+        items: {
+          ko: [
+            'Overview 정렬 기능 구현 (UZS 상단 고정, 검색/필터 동시 동작)',
+            'Overview/Spot 테이블 PnL 컬럼 추가 및 필터 기능',
+            '가격 표시 천단위 콤마 포맷팅 적용',
+            'Spot 파일 분리 및 컴포넌트 리팩토링',
+          ],
+          en: [
+            'Overview sorting (UZS top fixed, search/filter simultaneous)',
+            'Overview/Spot table PnL column and filter',
+            'Price thousand separator formatting',
+            'Spot file separation and component refactoring',
+          ],
+        },
+      },
+      {
+        category: { ko: 'GNB & 공통 UI', en: 'GNB & Common UI' },
+        items: {
+          ko: [
+            'GNB 메뉴 구조 수정 및 불필요한 메뉴 삭제',
+            '글로벌 푸터 모달창 추가 및 페이지 이동 링크 설정',
+            '에러창 overlay 바탕 화면 클릭 시 자동 닫힘 방지',
+            '버튼 중복 클릭 방지 로직 구현',
+          ],
+          en: [
+            'GNB menu structure modification',
+            'Global footer modal and page navigation links',
+            'Error overlay click prevention',
+            'Button duplicate click prevention',
+          ],
+        },
+      },
+      {
+        category: { ko: '인증 & 보안 분기 처리', en: 'Auth & Security Branching' },
+        items: {
+          ko: [
+            'KYC 인증 분기 처리 (미인증 시 Security 페이지로 이동)',
+            'KYC/OneID 미인증 시 헤더 아이콘 Unverified 표시',
+            'OneID 로그인 플로우 복구 및 연동',
+            '보안 화면 Manage 버튼 상태별 스타일 처리',
+          ],
+          en: [
+            'KYC verification branching (redirect to Security if unverified)',
+            'KYC/OneID unverified header icon display',
+            'OneID login flow recovery and integration',
+            'Security screen Manage button state styling',
+          ],
+        },
+      },
+      {
+        category: { ko: '에러 핸들링 & 캐싱', en: 'Error Handling & Caching' },
+        items: {
+          ko: [
+            'React Query 캐싱 문제 해결 (로그아웃 시 모든 캐싱 내역 삭제)',
+            'Card List 캐싱 문제 해결',
+            'Decimal undefined 에러 해결',
+            '컴포넌트별 로딩 상태 분리 처리',
+          ],
+          en: [
+            'React Query caching fix (clear all cache on logout)',
+            'Card List caching issue fix',
+            'Decimal undefined error fix',
+            'Component-wise loading state separation',
+          ],
+        },
+      },
+      {
+        category: { ko: '반응형 & 모바일 UI', en: 'Responsive & Mobile UI' },
+        items: {
+          ko: [
+            '거래(Trade) 화면 전체 반응형 작업',
+            '보안 페이지 모바일 버튼 크기 조정',
+            '모바일 모달창 애니메이션 버그 수정',
+            'Deposit Crypto 모바일 버전 UX 개선 (코인/네트워크 선택 플로우)',
+          ],
+          en: [
+            'Trade screen full responsive implementation',
+            'Security page mobile button size adjustment',
+            'Mobile modal animation bug fix',
+            'Deposit Crypto mobile UX improvement (coin/network selection)',
+          ],
+        },
+      },
+    ],
     link: 'https://staging.uznex.com/',
     detailedDescription: {
       ko: 'UZ Exchange는 우즈베키스탄 시장을 타겟으로 한 암호화폐 거래 플랫폼입니다. 실시간 OrderBook, 차트, 거래 기능을 제공하며, 3개 언어(영어, 우즈벡어, 러시아어)를 지원합니다. KYC 인증, OTP 2FA, 소셜 로그인 등 금융 서비스 수준의 보안 기능을 구현했습니다.',
@@ -2001,10 +2646,78 @@ export const projects: Project[] = [
         'Cryptocurrency wallet system',
       ],
     },
-    responsibilities: {
-      ko: ['반응형 UI 전체 구현', 'Header Drawer 모바일 메뉴 구현', 'SVGR Plugin 설정', '이미지 스타일 리팩토링'],
-      en: ['Full responsive UI', 'Header Drawer mobile menu', 'SVGR Plugin setup', 'Image style refactoring'],
-    },
+    responsibilities: [
+      {
+        category: { ko: '반응형 UI 시스템', en: 'Responsive UI System' },
+        items: {
+          ko: [
+            '메인 홈 반응형 - Tablet/Mobile 대응 레이아웃 구현',
+            'Voting 시스템 반응형 - 투표 목록, 상세, Upcoming 페이지 전체 반응형',
+            'My Wallet 반응형 - 지갑, 입출금, 거래 이력 페이지 반응형',
+            'My Profile / Security 반응형 - 프로필 수정, 보안 설정 모달 반응형',
+            '인증 페이지 반응형 - 로그인, 회원가입, 가입완료 페이지 반응형',
+            'Language 모달 반응형 - 다국어 선택 모달 반응형 대응',
+          ],
+          en: [
+            'Main home responsive - Tablet/Mobile layout implementation',
+            'Voting system responsive - Vote list, detail, Upcoming pages full responsive',
+            'My Wallet responsive - Wallet, deposit/withdrawal, transaction history pages responsive',
+            'My Profile / Security responsive - Profile edit, security settings modal responsive',
+            'Auth pages responsive - Login, signup, signup complete pages responsive',
+            'Language modal responsive - Multilingual selection modal responsive',
+          ],
+        },
+      },
+      {
+        category: { ko: 'Header / Navigation 시스템', en: 'Header / Navigation System' },
+        items: {
+          ko: [
+            'Header Drawer - 모바일용 햄버거 메뉴 Drawer 구현',
+            'Footer Navigation - 푸터 네비게이션 링크 추가',
+            'Drawer 내 로그인/회원가입 아이콘 수정',
+          ],
+          en: [
+            'Header Drawer - Mobile hamburger menu Drawer implementation',
+            'Footer Navigation - Footer navigation link addition',
+            'Drawer login/signup icon modification',
+          ],
+        },
+      },
+      {
+        category: { ko: '버그 수정', en: 'Bug Fixes' },
+        items: {
+          ko: [
+            '로고 및 오타 수정',
+            '메인 홈, FAQ, Coming Soon 모달 버그 수정',
+            '로그인 시 권한 모달 창 이슈 해결',
+            'Header 스타일 버그 수정',
+          ],
+          en: [
+            'Logo and typo fixes',
+            'Main home, FAQ, Coming Soon modal bug fixes',
+            'Login permission modal issue resolution',
+            'Header style bug fix',
+          ],
+        },
+      },
+      {
+        category: { ko: '코드 품질 개선', en: 'Code Quality Improvement' },
+        items: {
+          ko: [
+            'SVGR Plugin 설정 - SVG를 React 컴포넌트로 사용할 수 있도록 Vite 플러그인 추가',
+            '이미지 중복 스타일 리팩토링 - 공통 스타일 컴포넌트로 추출',
+            '불필요한 파일 삭제 및 코드 정리',
+            '반복문 key prop 추가 (React 최적화)',
+          ],
+          en: [
+            'SVGR Plugin setup - Vite plugin for using SVG as React components',
+            'Image duplicate style refactoring - Extract to common style components',
+            'Unnecessary file deletion and code cleanup',
+            'Loop key prop addition (React optimization)',
+          ],
+        },
+      },
+    ],
     link: 'https://marketplaces.uznexdev.com/',
     detailedDescription: {
       ko: 'NFT 마켓플레이스와 암호화폐 거래 기능을 통합한 커뮤니티 플랫폼입니다. 사용자는 NFT 컬렉션을 관리하고, 암호화폐 입출금을 수행하며, 커뮤니티 투표에 참여할 수 있습니다.',
@@ -2206,10 +2919,74 @@ export const projects: Project[] = [
         'Multilingual support (Korean/English)',
       ],
     },
-    responsibilities: {
-      ko: ['전체 도메인 FE 담당', 'RDF 데이터 → UI 데이터 변환 로직 (564줄)', 'Apache2 배포'],
-      en: ['Full domain FE responsibility', 'RDF data → UI data transformation logic (564 lines)', 'Apache2 deployment'],
-    },
+    responsibilities: [
+      {
+        category: { ko: '전체', en: 'Overall' },
+        items: {
+          ko: [
+            'KODEX2 국방 지식 플랫폼 프론트엔드 전체 구현',
+            'RDF/Linked Data 기반 데이터 아키텍처 설계',
+            '다국어(한국어/영어) 시스템 전체 구축',
+          ],
+          en: [
+            'KODEX2 defense knowledge platform full frontend implementation',
+            'RDF/Linked Data based data architecture design',
+            'Full multilingual (Korean/English) system development',
+          ],
+        },
+      },
+      {
+        category: { ko: 'Faceted Navigation', en: 'Faceted Navigation' },
+        items: {
+          ko: [
+            'RDF 데이터 → UI 데이터 변환 로직 구현 (564줄)',
+            '동적 필터 그룹 생성 (카테고리별 자동 분류)',
+            'MobX 기반 필터 상태 관리 (선택/해제/초기화)',
+            '리스트/그리드 뷰 전환 + 페이지네이션',
+          ],
+          en: [
+            'RDF data → UI data transformation logic (564 lines)',
+            'Dynamic filter group generation (auto-categorization)',
+            'MobX based filter state management (select/deselect/reset)',
+            'List/grid view toggle + pagination',
+          ],
+        },
+      },
+      {
+        category: { ko: '상태 관리 아키텍처', en: 'State Management Architecture' },
+        items: {
+          ko: [
+            'MobX + React Query 하이브리드 패턴 설계',
+            '서버 상태(API 캐싱) / 클라이언트 상태(필터) 분리',
+            'Query Keys Factory 패턴으로 캐시 관리 체계화',
+            'staleTime 5분 설정으로 불필요한 API 호출 방지',
+          ],
+          en: [
+            'MobX + React Query hybrid pattern design',
+            'Server state (API caching) / Client state (filter) separation',
+            'Query Keys Factory pattern for cache management',
+            'staleTime 5min setting to prevent unnecessary API calls',
+          ],
+        },
+      },
+      {
+        category: { ko: '다국어 시스템', en: 'Multilingual System' },
+        items: {
+          ko: [
+            '이중 API 엔드포인트 구조 설계 (api_ko, api_en)',
+            '언어별 커스텀 훅 8개 구현 (useSearchKo/En, useFacetKo/En 등)',
+            'i18next 기반 파일 번역 시스템 구축',
+            'localStorage 언어 설정 영속화',
+          ],
+          en: [
+            'Dual API endpoint structure design (api_ko, api_en)',
+            '8 language-specific custom hooks (useSearchKo/En, useFacetKo/En, etc.)',
+            'i18next file translation system',
+            'localStorage language persistence',
+          ],
+        },
+      },
+    ],
     link: 'http://kodex2.eventpool.kr/',
     detailedDescription: {
       ko: 'KODEX2는 국방 관련 장비, 시설, 군사 정보를 RDF 기반 시맨틱 웹 기술로 제공하는 다국어(한국어/영어) 지식 플랫폼입니다. Faceted Navigation, 실시간 검색, 동적 필터링 등 고급 데이터 브라우징 기능을 제공합니다.',
@@ -2442,10 +3219,89 @@ export const projects: Project[] = [
         'Bible/booklet request system',
       ],
     },
-    responsibilities: {
-      ko: ['React + TypeScript 기반 웹 프론트엔드 전체 구현', '반응형 웹 디자인', 'SWR 기반 데이터 패칭 및 캐싱 전략 설계', '관리자 CMS 구현'],
-      en: ['Full React + TypeScript web frontend implementation', 'Responsive web design', 'SWR-based data fetching and caching strategy', 'Admin CMS implementation'],
-    },
+    responsibilities: [
+      {
+        category: { ko: '전체', en: 'Overall' },
+        items: {
+          ko: [
+            'React + TypeScript 기반 웹 프론트엔드 전체 구현',
+            '반응형 웹 디자인 (Desktop, Tablet, Mobile)',
+            'PHP 백엔드 API 연동',
+          ],
+          en: [
+            'Full React + TypeScript web frontend implementation',
+            'Responsive web design (Desktop, Tablet, Mobile)',
+            'PHP backend API integration',
+          ],
+        },
+      },
+      {
+        category: { ko: '블로그 시스템', en: 'Blog System' },
+        items: {
+          ko: [
+            'SWR 기반 데이터 패칭 및 캐싱 전략 설계',
+            '카테고리/키워드 검색 기능 구현',
+            '게시글 상세 페이지 및 SNS 공유 기능',
+            '무한 스크롤/페이지네이션 구현',
+          ],
+          en: [
+            'SWR-based data fetching and caching strategy design',
+            'Category/keyword search feature implementation',
+            'Post detail page and SNS sharing feature',
+            'Infinite scroll/pagination implementation',
+          ],
+        },
+      },
+      {
+        category: { ko: '관리자 시스템', en: 'Admin System' },
+        items: {
+          ko: [
+            '로그인 인증 및 보호된 라우트 구현',
+            'react-hook-form 기반 폼 유효성 검사',
+            'react-quill WYSIWYG 에디터 통합',
+            '복합 조건 검색 (날짜, 카테고리, 키워드)',
+          ],
+          en: [
+            'Login authentication and protected route implementation',
+            'react-hook-form based form validation',
+            'react-quill WYSIWYG editor integration',
+            'Complex condition search (date, category, keyword)',
+          ],
+        },
+      },
+      {
+        category: { ko: '공통 컴포넌트', en: 'Common Components' },
+        items: {
+          ko: [
+            '반응형 네비게이션 (햄버거 메뉴)',
+            '재사용 가능한 페이지네이션 컴포넌트',
+            'SEO 메타태그 컴포넌트',
+            '로딩/에러/404 페이지',
+          ],
+          en: [
+            'Responsive navigation (hamburger menu)',
+            'Reusable pagination component',
+            'SEO meta tag component',
+            'Loading/error/404 pages',
+          ],
+        },
+      },
+      {
+        category: { ko: '상태 관리', en: 'State Management' },
+        items: {
+          ko: [
+            'Redux Toolkit 스토어 설계',
+            '로그인 상태, 게시글 목록, 검색 조건 슬라이스 구현',
+            'SWR과 Redux 간 데이터 동기화',
+          ],
+          en: [
+            'Redux Toolkit store design',
+            'Login state, post list, search condition slices implementation',
+            'SWR and Redux data synchronization',
+          ],
+        },
+      },
+    ],
     link: 'https://www.biblesforkorea.org/',
     detailedDescription: {
       ko: 'BFK(Bibles For Korea)는 한국인을 위한 성경 보급 단체의 공식 웹사이트입니다. 성경/소책자 신청, 블로그 콘텐츠 관리, 후원 시스템을 제공하며, 관리자용 CMS(블로그 관리, 리소스 관리, 사용자 관리)를 포함합니다. SWR로 서버 데이터 캐싱 및 자동 재검증을, Redux Toolkit으로 클라이언트 상태를 관리하는 하이브리드 상태 관리 전략을 적용했습니다.',
@@ -2652,10 +3508,165 @@ export const projects: Project[] = [
         'Role-based routing',
       ],
     },
-    responsibilities: {
-      ko: ['프로젝트 초기 세팅', '공통 컴포넌트 시스템', '전체 페이지 UI 구현', 'API 연동', 'Vercel 배포'],
-      en: ['Project initial setup', 'Common component system', 'Full page UI implementation', 'API integration', 'Vercel deployment'],
-    },
+    responsibilities: [
+      {
+        category: { ko: '프로젝트 초기 세팅', en: 'Project Initial Setup' },
+        items: {
+          ko: [
+            'React + TypeScript + Vite 기반 프로젝트 환경 구성',
+            'Prettier, ESLint, Husky 설정 (commit 시 코드 품질 검사)',
+            'React Router DOM 기반 라우팅 구조 설계',
+            'MUI 기반 테마 및 팔레트 설정',
+          ],
+          en: [
+            'React + TypeScript + Vite project environment setup',
+            'Prettier, ESLint, Husky setup (code quality check on commit)',
+            'React Router DOM based routing structure design',
+            'MUI based theme and palette setup',
+          ],
+        },
+      },
+      {
+        category: { ko: '공통 컴포넌트 시스템', en: 'Common Component System' },
+        items: {
+          ko: [
+            'Input, Textarea, Select, Button 등 폼 관련 공통 컴포넌트 구현',
+            'React Hook Form 적용 (모든 input 컴포넌트 통합)',
+            'Table 공통 컴포넌트 구현 (loading, pagination 지원)',
+            'Modal 공통 컴포넌트 및 Context 기반 상태 관리',
+            'Title, Label 등 레이아웃 공통 컴포넌트 구현',
+          ],
+          en: [
+            'Input, Textarea, Select, Button form common components',
+            'React Hook Form integration (all input components)',
+            'Table common component (loading, pagination support)',
+            'Modal common component and Context based state management',
+            'Title, Label layout common components',
+          ],
+        },
+      },
+      {
+        category: { ko: '레이아웃 구조', en: 'Layout Structure' },
+        items: {
+          ko: [
+            'GNB(Global Navigation Bar) 컴포넌트 구현',
+            'LNB(Left Navigation Bar/Sidebar) 컴포넌트 구현',
+            '권한별 LNB 메뉴 분기 처리 (ADMIN/부관리자)',
+            '전체 레이아웃 Outlet 스크롤 및 스타일 적용',
+          ],
+          en: [
+            'GNB (Global Navigation Bar) component',
+            'LNB (Left Navigation Bar/Sidebar) component',
+            'Permission-based LNB menu branching (ADMIN/vice-admin)',
+            'Full layout Outlet scroll and style application',
+          ],
+        },
+      },
+      {
+        category: { ko: '페이지 UI 구현', en: 'Page UI Implementation' },
+        items: {
+          ko: [
+            '로그인/계정 생성/내 정보 수정 페이지 레이아웃',
+            '면장 목록/상세/등록/수정 페이지 레이아웃',
+            '농부 목록/상세/등록 페이지 레이아웃',
+            '부관리자 목록/상세/수정 페이지 레이아웃',
+            '요청 목록/상세 페이지 (승인/거절/삭제 기능 포함)',
+            '지역/섹션 관리 페이지 레이아웃',
+            '나무 수령/수매 내역 목록 페이지',
+          ],
+          en: [
+            'Login/account create/profile edit page layouts',
+            'Village head list/detail/register/edit page layouts',
+            'Farmer list/detail/register page layouts',
+            'Vice-admin list/detail/edit page layouts',
+            'Request list/detail pages (approve/reject/delete features)',
+            'Location/section management page layouts',
+            'Tree receipt/purchase history list pages',
+          ],
+        },
+      },
+      {
+        category: { ko: 'API 연동', en: 'API Integration' },
+        items: {
+          ko: [
+            '로그인/로그아웃 API 연동',
+            '계정 생성 API 연동 (지역 정보 Select 연동)',
+            '면장 CRUD API 연동 (목록/상세/등록/수정)',
+            '농부 CRUD API 연동 (목록/상세/등록)',
+            '부관리자 API 연동 (목록/상세/수정)',
+            '요청 관리 API 연동 (목록/상세/승인/거절/삭제, 필터링, Pagination)',
+            '지역/섹션 API 연동 (목록/등록/삭제)',
+            '나무 구매 내역/수매 내역 등록 API 연동',
+          ],
+          en: [
+            'Login/logout API integration',
+            'Account creation API (region info Select integration)',
+            'Village head CRUD API (list/detail/register/edit)',
+            'Farmer CRUD API (list/detail/register)',
+            'Vice-admin API (list/detail/edit)',
+            'Request management API (list/detail/approve/reject/delete, filtering, pagination)',
+            'Location/section API (list/register/delete)',
+            'Tree purchase/receipt history API',
+          ],
+        },
+      },
+      {
+        category: { ko: '인증 시스템', en: 'Authentication System' },
+        items: {
+          ko: [
+            'accessToken 기반 인증 처리',
+            '토큰 만료 시 자동 로그아웃 처리',
+            '미인증 사용자 로그인 페이지 리다이렉트',
+            '권한별 UI 분기 처리 (ADMIN/부관리자-농림부)',
+          ],
+          en: [
+            'accessToken based authentication',
+            'Auto-logout on token expiration',
+            'Unauthenticated user login page redirect',
+            'Permission-based UI branching (ADMIN/vice-admin-forestry)',
+          ],
+        },
+      },
+      {
+        category: { ko: '외부 서비스 연동', en: 'External Service Integration' },
+        items: {
+          ko: [
+            'Google Maps API 연동 (미얀마 지역 선택 지원)',
+            'Toast 알림 시스템 적용 (react-toastify)',
+          ],
+          en: [
+            'Google Maps API integration (Myanmar region selection)',
+            'Toast notification system (react-toastify)',
+          ],
+        },
+      },
+      {
+        category: { ko: '다국어 지원', en: 'Multilingual Support' },
+        items: {
+          ko: [
+            '다국어 지원 기능 구현 (라오스어 포함)',
+          ],
+          en: [
+            'Multilingual support implementation (Lao language included)',
+          ],
+        },
+      },
+      {
+        category: { ko: '배포/인프라', en: 'Deployment/Infrastructure' },
+        items: {
+          ko: [
+            'Vercel 배포 설정 (vercel.json, rewrite 설정)',
+            '백엔드 API Proxy 설정 (CORS 해결)',
+            'GitHub Actions 워크플로우 작성 (fork된 레포로 자동 push)',
+          ],
+          en: [
+            'Vercel deployment setup (vercel.json, rewrite config)',
+            'Backend API Proxy setup (CORS resolution)',
+            'GitHub Actions workflow (auto push to forked repo)',
+          ],
+        },
+      },
+    ],
     detailedDescription: {
       ko: '미얀마/라오스 지역 커피 농장 공급망을 관리하는 어드민 대시보드입니다. 면장(Village Head) 관리, 농부(Farmer) 관리, 커피 나무 거래, 구매 승인 워크플로우 등의 기능을 제공합니다.',
       en: 'An admin dashboard for managing coffee farm supply chain in Myanmar/Laos region. Provides features including Village Head management, Farmer management, coffee tree transactions, and purchase approval workflows.',
