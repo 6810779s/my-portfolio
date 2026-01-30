@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello",
+    "name": "Eunhee Jang",
+    "role": "Frontend / Full-Stack Developer",
+    "description": "I develop web services with React, Next.js, and TypeScript. I value user experience and code quality, providing efficient solutions in both frontend and backend.",
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Contact Me"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "About Me",
+    "description": "I have been developing web services centered on React, Next.js, and TypeScript. In collaborative environments, I standardized quality and builds using Husky, ESLint, Prettier, and Vite, and documented common components with Storybook to improve communication efficiency. For state management, I primarily use MobX and selectively apply Zustand or Context API depending on project needs. With experience in Node.js and Next.js backend development, I have strong understanding between frontend and backend for smooth communication.",
+    "experience": {
+      "years": "2.5 Years",
+      "label": "Experience"
+    },
+    "projects": {
+      "count": "15+",
+      "label": "Projects"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Tech Stack"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Work Experience",
+    "current": "Present"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Projects",
+    "filter": {
+      "all": "All",
+      "company": "Company",
+      "freelance": "Freelance"
+    },
+    "viewDetail": "View Details",
+    "period": "Period",
+    "role": "Role",
+    "team": "Team Size",
+    "techStack": "Tech Stack",
+    "features": "Features",
+    "responsibilities": "Responsibilities",
+    "visitSite": "Visit Site",
+    "back": "Go Back",
+    "detailedDescription": "Project Overview",
+    "techImplementation": "Technical Implementation",
+    "troubleshooting": "Troubleshooting",
+    "problem": "Problem",
+    "solution": "Solution",
+    "result": "Result",
+    "folderStructure": "Project Structure",
+    "tabs": {
+      "overview": "Overview",
+      "techDetails": "Tech Details",
+      "troubleshooting": "Troubleshooting"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in Touch",
+    "description": "I welcome inquiries about project collaboration or job opportunities.",
+    "email": "Email",
+    "github": "GitHub",
+    "blog": "Blog"
+  },
+  "footer": {
+    "copyright": "© 2025 Eunhee Jang. All rights reserved."
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "language": {
+    "ko": "한국어",
+    "en": "English"
+  }
+}

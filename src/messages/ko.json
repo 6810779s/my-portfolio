@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "about": "소개",
+    "skills": "기술",
+    "experience": "경력",
+    "projects": "프로젝트",
+    "contact": "연락처"
+  },
+  "hero": {
+    "greeting": "안녕하세요",
+    "name": "장은희",
+    "role": "Frontend / Full-Stack Developer",
+    "description": "React, Next.js, TypeScript를 중심으로 웹 서비스를 개발합니다. 사용자 경험과 코드 품질을 중요하게 생각하며, 프론트엔드와 백엔드 모두에서 효율적인 솔루션을 제공합니다.",
+    "cta": {
+      "projects": "프로젝트 보기",
+      "contact": "연락하기"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "저에 대해",
+    "description": "React, Next.js, TypeScript를 중심으로 웹 서비스를 개발해 왔습니다. 협업 환경에서는 Husky, ESLint, Prettier, Vite를 적용해 품질과 빌드를 표준화했으며, Storybook으로 공통 컴포넌트를 문서화해 커뮤니케이션 효율을 높였습니다. 상태 관리는 주로 MobX를 사용하고, 프로젝트 성격에 따라 Zustand 또는 Context API를 선택적으로 적용했습니다. 또한 Node.js와 Next.js 기반의 백엔드 업무에도 참여한 경험이 있어 프론트엔드와 백엔드 간 이해도가 높고 원활한 소통이 가능합니다.",
+    "experience": {
+      "years": "2년 5개월",
+      "label": "경력"
+    },
+    "projects": {
+      "count": "15+",
+      "label": "프로젝트"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "기술 스택"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "경력 사항",
+    "current": "현재"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "프로젝트",
+    "filter": {
+      "all": "전체",
+      "company": "회사",
+      "freelance": "프리랜스"
+    },
+    "viewDetail": "자세히 보기",
+    "period": "기간",
+    "role": "역할",
+    "team": "팀 규모",
+    "techStack": "기술 스택",
+    "features": "주요 기능",
+    "responsibilities": "담당 업무",
+    "visitSite": "사이트 방문",
+    "back": "뒤로 가기",
+    "detailedDescription": "프로젝트 상세 소개",
+    "techImplementation": "기술 구현 상세",
+    "troubleshooting": "트러블슈팅",
+    "problem": "문제 상황",
+    "solution": "해결 방법",
+    "result": "결과",
+    "folderStructure": "프로젝트 구조",
+    "tabs": {
+      "overview": "개요",
+      "techDetails": "기술 상세",
+      "troubleshooting": "트러블슈팅"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "연락처",
+    "description": "프로젝트 협업이나 채용 관련 문의는 언제든지 환영합니다.",
+    "email": "이메일",
+    "github": "깃허브",
+    "blog": "블로그"
+  },
+  "footer": {
+    "copyright": "© 2025 장은희. All rights reserved."
+  },
+  "theme": {
+    "light": "라이트 모드",
+    "dark": "다크 모드"
+  },
+  "language": {
+    "ko": "한국어",
+    "en": "English"
+  }
+}
