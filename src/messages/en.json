@@ -21,11 +21,9 @@
     "subtitle": "About Me",
     "description": "I have been developing web services centered on React, Next.js, and TypeScript. In collaborative environments, I standardized quality and builds using Husky, ESLint, Prettier, and Vite, and documented common components with Storybook to improve communication efficiency. For state management, I primarily use MobX and selectively apply Zustand or Context API depending on project needs. With experience in Node.js and Next.js backend development, I have strong understanding between frontend and backend for smooth communication.",
     "experience": {
-      "years": "2.5 Years",
       "label": "Experience"
     },
     "projects": {
-      "count": "15+",
       "label": "Projects"
     }
   },

@@ -26,62 +26,39 @@ export default function AboutSection() {
           <p className="text-muted-foreground">{t('subtitle')}</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex justify-center"
-          >
-            <div className="relative">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-gradient-to-br from-muted to-border overflow-hidden">
-                {/* Placeholder for profile image */}
-                <div className="w-full h-full flex items-center justify-center text-6xl font-bold text-muted-foreground">
-                  EJ
-                </div>
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-border rounded-2xl -z-10" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-muted rounded-2xl -z-10" />
-            </div>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="max-w-3xl mx-auto"
+        >
+          <p className="text-muted-foreground leading-relaxed mb-8 text-center">
+            {t('description')}
+          </p>
 
-          {/* About Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              {t('description')}
-            </p>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-6">
-              <div className="p-6 bg-muted rounded-xl">
-                <Briefcase className="w-8 h-8 text-foreground mb-3" />
-                <p className="text-2xl font-bold text-foreground mb-1">
-                  {calculateTotalExperience(experiences, locale)}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {t('experience.label')}
-                </p>
-              </div>
-              <div className="p-6 bg-muted rounded-xl">
-                <FolderOpen className="w-8 h-8 text-foreground mb-3" />
-                <p className="text-2xl font-bold text-foreground mb-1">
-                  {projects.length}+
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {t('projects.label')}
-                </p>
-              </div>
+          {/* Stats */}
+          <div className="grid grid-cols-2 gap-6 max-w-md mx-auto">
+            <div className="p-6 bg-muted rounded-xl text-center">
+              <Briefcase className="w-8 h-8 text-foreground mb-3 mx-auto" />
+              <p className="text-2xl font-bold text-foreground mb-1">
+                {calculateTotalExperience(experiences, locale)}
+              </p>
+              <p className="text-sm text-muted-foreground">
+                {t('experience.label')}
+              </p>
             </div>
-          </motion.div>
-        </div>
+            <div className="p-6 bg-muted rounded-xl text-center">
+              <FolderOpen className="w-8 h-8 text-foreground mb-3 mx-auto" />
+              <p className="text-2xl font-bold text-foreground mb-1">
+                {projects.length}+
+              </p>
+              <p className="text-sm text-muted-foreground">
+                {t('projects.label')}
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
