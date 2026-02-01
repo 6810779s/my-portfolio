@@ -33,7 +33,7 @@ export default function AboutSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="max-w-3xl mx-auto"
         >
-          <p className="text-muted-foreground leading-relaxed mb-8 text-center">
+          <p className="text-muted-foreground leading-relaxed mb-8 text-center whitespace-pre-line">
             {t('description')}
           </p>
 

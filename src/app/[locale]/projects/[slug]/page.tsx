@@ -5,9 +5,10 @@ import { useParams } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Calendar, Users, Briefcase, Wrench, AlertCircle, CheckCircle, Lightbulb, FileText, Code, Bug, FolderTree } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Calendar, Users, Briefcase, Wrench, AlertCircle, CheckCircle, Lightbulb, FileText, Code, Bug, FolderTree, ThumbsUp, ThumbsDown, Target, Zap, CircleDot } from 'lucide-react';
 import { FolderStructure } from '@/components/FolderStructure';
 import { projects } from '@/data/projects';
+import { isDetailedTroubleshooting } from '@/types';
 import { notFound } from 'next/navigation';
 
 type TabType = 'overview' | 'techDetails' | 'troubleshooting';
@@ -310,65 +311,199 @@ export default function ProjectDetailPage() {
                   {project.troubleshooting!.length}
                 </span>
               </h2>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {project.troubleshooting!.map((item, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="p-5 bg-muted rounded-xl border border-border"
+                    className="p-6 bg-muted rounded-xl border border-border"
                   >
-                    <h3 className="font-semibold text-foreground mb-4 text-lg">
+                    {/* Title */}
+                    <h3 className="font-semibold text-foreground mb-6 text-lg flex items-center gap-2">
+                      <span className="w-7 h-7 rounded-full bg-foreground/10 flex items-center justify-center text-sm">
+                        {index + 1}
+                      </span>
                       {item.title[locale]}
                     </h3>
 
-                    <div className="space-y-4">
-                      {/* Problem */}
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
-                          <AlertCircle className="w-3.5 h-3.5 text-red-500" />
+                    {/* Detailed Format (새로운 형식) */}
+                    {isDetailedTroubleshooting(item) ? (
+                      <div className="space-y-8">
+                        {/* 1. 이슈 상황 */}
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2 text-base">
+                            <AlertCircle className="w-5 h-5 text-red-400" />
+                            {t('troubleshootingSection.situation')}
+                          </h4>
+                          <div className="bg-background/80 dark:bg-background/40 rounded-xl p-5 space-y-4 border border-border/50">
+                            <div className="flex items-start gap-4">
+                              <span className="text-sm font-semibold text-foreground/80 dark:text-foreground/90 min-w-[70px] shrink-0">
+                                {t('troubleshootingSection.environment')}
+                              </span>
+                              <p className="text-base text-foreground dark:text-foreground/90 flex-1 leading-relaxed">
+                                {item.situation.environment[locale]}
+                              </p>
+                            </div>
+                            <div className="flex items-start gap-4">
+                              <span className="text-sm font-semibold text-foreground/80 dark:text-foreground/90 min-w-[70px] shrink-0">
+                                {t('troubleshootingSection.symptom')}
+                              </span>
+                              <p className="text-base text-foreground dark:text-foreground/90 flex-1 leading-relaxed">
+                                {item.situation.symptom[locale]}
+                              </p>
+                            </div>
+                            <div className="flex items-start gap-4">
+                              <span className="text-sm font-semibold text-foreground/80 dark:text-foreground/90 min-w-[70px] shrink-0">
+                                {t('troubleshootingSection.impact')}
+                              </span>
+                              <p className="text-base text-foreground dark:text-foreground/90 flex-1 leading-relaxed">
+                                {item.situation.impact[locale]}
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex-1">
-                          <p className="font-medium text-foreground text-sm mb-1">
-                            {t('problem')}
-                          </p>
-                          <p className="text-muted-foreground text-sm leading-relaxed">
-                            {item.problem[locale]}
-                          </p>
-                        </div>
-                      </div>
 
-                      {/* Solution */}
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center mt-0.5">
-                          <Lightbulb className="w-3.5 h-3.5 text-blue-500" />
+                        {/* 2. 해결 방안 후보 */}
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2 text-base">
+                            <Target className="w-5 h-5 text-blue-400" />
+                            {t('troubleshootingSection.candidates')}
+                          </h4>
+                          <div className="space-y-3">
+                            {item.candidates.map((candidate, candidateIndex) => {
+                              const choiceLetter = String.fromCharCode(65 + candidateIndex);
+                              const isChosen = item.solution.choice?.includes(choiceLetter);
+                              return (
+                                <div
+                                  key={candidateIndex}
+                                  className={`bg-background/80 dark:bg-background/40 rounded-xl p-5 border transition-all ${
+                                    isChosen
+                                      ? 'border-green-500/50 dark:border-green-400/50 ring-1 ring-green-500/20'
+                                      : 'border-border/50'
+                                  }`}
+                                >
+                                  <p className={`font-semibold text-base mb-3 flex items-center gap-2 ${
+                                    isChosen ? 'text-green-600 dark:text-green-400' : 'text-foreground dark:text-foreground/90'
+                                  }`}>
+                                    <span className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold ${
+                                      isChosen
+                                        ? 'bg-green-500/20 dark:bg-green-400/20 text-green-600 dark:text-green-400'
+                                        : 'bg-muted text-muted-foreground'
+                                    }`}>
+                                      {choiceLetter}
+                                    </span>
+                                    {candidate.name[locale]}
+                                    {isChosen && <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 ml-auto" />}
+                                  </p>
+                                  <div className="grid sm:grid-cols-2 gap-4">
+                                    <div className="flex items-start gap-3 p-3 bg-green-500/5 dark:bg-green-400/10 rounded-lg">
+                                      <ThumbsUp className="w-4 h-4 text-green-500 dark:text-green-400 mt-0.5 flex-shrink-0" />
+                                      <p className="text-sm text-foreground/80 dark:text-foreground/80 leading-relaxed">
+                                        {candidate.pros[locale]}
+                                      </p>
+                                    </div>
+                                    <div className="flex items-start gap-3 p-3 bg-red-500/5 dark:bg-red-400/10 rounded-lg">
+                                      <ThumbsDown className="w-4 h-4 text-red-500 dark:text-red-400 mt-0.5 flex-shrink-0" />
+                                      <p className="text-sm text-foreground/80 dark:text-foreground/80 leading-relaxed">
+                                        {candidate.cons[locale]}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
                         </div>
-                        <div className="flex-1">
-                          <p className="font-medium text-foreground text-sm mb-1">
-                            {t('solution')}
-                          </p>
-                          <p className="text-muted-foreground text-sm whitespace-pre-line leading-relaxed">
-                            {item.solution[locale]}
-                          </p>
-                        </div>
-                      </div>
 
-                      {/* Result */}
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center mt-0.5">
-                          <CheckCircle className="w-3.5 h-3.5 text-green-500" />
+                        {/* 3. 선택한 해결법 */}
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2 text-base">
+                            <Zap className="w-5 h-5 text-yellow-500 dark:text-yellow-400" />
+                            {t('troubleshootingSection.chosenSolution')}
+                          </h4>
+                          <div className="bg-gradient-to-br from-green-500/15 via-emerald-500/10 to-blue-500/15 dark:from-green-400/20 dark:via-emerald-400/15 dark:to-blue-400/20 rounded-xl p-6 border border-green-500/30 dark:border-green-400/40">
+                            <p className="font-bold text-lg text-foreground dark:text-foreground mb-3 flex items-center gap-3">
+                              <span className="px-3 py-1 bg-green-500/20 dark:bg-green-400/30 text-green-600 dark:text-green-300 rounded-lg text-sm font-bold">
+                                {item.solution.choice}
+                              </span>
+                              {item.solution.name[locale]}
+                            </p>
+                            <p className="text-base text-foreground/80 dark:text-foreground/80 leading-relaxed">
+                              {item.solution.description[locale]}
+                            </p>
+                          </div>
                         </div>
-                        <div className="flex-1">
-                          <p className="font-medium text-foreground text-sm mb-1">
-                            {t('result')}
-                          </p>
-                          <p className="text-muted-foreground text-sm leading-relaxed">
-                            {item.result[locale]}
-                          </p>
+
+                        {/* 4. 선택 이유 */}
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2 text-base">
+                            <CheckCircle className="w-5 h-5 text-green-500 dark:text-green-400" />
+                            {t('troubleshootingSection.reason')}
+                          </h4>
+                          <ul className="space-y-3 bg-background/80 dark:bg-background/40 rounded-xl p-5 border border-border/50">
+                            {item.reason[locale].map((reasonItem, reasonIndex) => (
+                              <li
+                                key={reasonIndex}
+                                className="flex items-start gap-3 text-base text-foreground/80 dark:text-foreground/80"
+                              >
+                                <CircleDot className="w-4 h-4 text-green-500 dark:text-green-400 mt-1 flex-shrink-0" />
+                                <span className="leading-relaxed">{reasonItem}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
-                    </div>
+                    ) : (
+                      /* Simple Format (기존 형식) */
+                      <div className="space-y-4">
+                        {/* Problem */}
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
+                            <AlertCircle className="w-3.5 h-3.5 text-red-500" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-medium text-foreground text-sm mb-1">
+                              {t('problem')}
+                            </p>
+                            <p className="text-muted-foreground text-sm leading-relaxed">
+                              {item.problem[locale]}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Solution */}
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center mt-0.5">
+                            <Lightbulb className="w-3.5 h-3.5 text-blue-500" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-medium text-foreground text-sm mb-1">
+                              {t('solution')}
+                            </p>
+                            <p className="text-muted-foreground text-sm whitespace-pre-line leading-relaxed">
+                              {item.solution[locale]}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Result */}
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center mt-0.5">
+                            <CheckCircle className="w-3.5 h-3.5 text-green-500" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-medium text-foreground text-sm mb-1">
+                              {t('result')}
+                            </p>
+                            <p className="text-muted-foreground text-sm leading-relaxed">
+                              {item.result[locale]}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </div>

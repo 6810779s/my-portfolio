@@ -19,7 +19,7 @@
   "about": {
     "title": "About Me",
     "subtitle": "저를 소개합니다",
-    "description": "React, Next.js, TypeScript를 중심으로 웹 서비스를 개발해 왔습니다. 협업 환경에서는 Husky, ESLint, Prettier, Vite를 적용해 품질과 빌드를 표준화했으며, Storybook으로 공통 컴포넌트를 문서화해 커뮤니케이션 효율을 높였습니다. 상태 관리는 주로 MobX를 사용하고, 프로젝트 성격에 따라 Zustand 또는 Context API를 선택적으로 적용했습니다. 또한 Node.js와 Next.js 기반의 백엔드 업무에도 참여한 경험이 있어 프론트엔드와 백엔드 간 이해도가 높고 원활한 소통이 가능합니다.",
+    "description": "문제 상황을 마주했을 때 여러 해결 방안을 비교하고, 선택 이유를 명확히 정리하는 습관이 있습니다. \n모호한 기획은 그대로 두지 않고, 기획자·디자이너와 먼저 논의하여 요구사항을 명확히 한 뒤 개발을 시작합니다. \n기능 구현에서 끝나지 않고, 성능 최적화와 사용자 경험까지 고려하며, Type Guard, Query Key Factory 등 런타임 안정성과 유지보수성을 높이는 패턴을 적극 적용합니다.",
     "experience": {
       "label": "경력"
     },
@@ -60,6 +60,15 @@
     "solution": "해결 방법",
     "result": "결과",
     "folderStructure": "프로젝트 구조",
+    "troubleshootingSection": {
+      "situation": "이슈 상황",
+      "environment": "발생 환경",
+      "symptom": "증상",
+      "impact": "영향 범위",
+      "candidates": "해결 방안 후보",
+      "chosenSolution": "선택한 해결법",
+      "reason": "선택 이유"
+    },
     "tabs": {
       "overview": "개요",
       "techDetails": "기술 상세",
