@@ -5,7 +5,8 @@ import { useParams } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Calendar, Users, Briefcase, Wrench, AlertCircle, CheckCircle, Lightbulb, FileText, Code, Bug, FolderTree, ThumbsUp, ThumbsDown, Target, Zap, CircleDot } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Calendar, Users, Briefcase, Wrench, AlertCircle, CheckCircle, Lightbulb, FileText, Code, Bug, FolderTree, ThumbsUp, ThumbsDown, Target, Zap, CircleDot, ChevronDown } from 'lucide-react';
+import { AnimatePresence } from 'framer-motion';
 import { FolderStructure } from '@/components/FolderStructure';
 import { projects } from '@/data/projects';
 import { isDetailedTroubleshooting } from '@/types';
@@ -18,6 +19,19 @@ export default function ProjectDetailPage() {
   const t = useTranslations('projects');
   const locale = useLocale() as 'ko' | 'en';
   const [activeTab, setActiveTab] = useState<TabType>('overview');
+  const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
+
+  const toggleExpand = (index: number) => {
+    setExpandedItems(prev => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+      return next;
+    });
+  };
 
   const project = projects.find((p) => p.slug === params.slug);
 
@@ -311,23 +325,48 @@ export default function ProjectDetailPage() {
                   {project.troubleshooting!.length}
                 </span>
               </h2>
-              <div className="space-y-8">
-                {project.troubleshooting!.map((item, index) => (
+              <div className="space-y-4">
+                {project.troubleshooting!.map((item, index) => {
+                  const isExpanded = expandedItems.has(index);
+                  return (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="p-6 bg-muted rounded-xl border border-border"
+                    className="bg-muted rounded-xl border border-border overflow-hidden"
                   >
-                    {/* Title */}
-                    <h3 className="font-semibold text-foreground mb-6 text-lg flex items-center gap-2">
-                      <span className="w-7 h-7 rounded-full bg-foreground/10 flex items-center justify-center text-sm">
-                        {index + 1}
-                      </span>
-                      {item.title[locale]}
-                    </h3>
+                    {/* Clickable Title */}
+                    <button
+                      onClick={() => toggleExpand(index)}
+                      className="w-full p-6 flex items-center justify-between gap-4 text-left hover:bg-foreground/5 transition-colors"
+                    >
+                      <h3 className="font-semibold text-foreground text-lg flex items-center gap-3">
+                        <span className="w-7 h-7 rounded-full bg-foreground/10 flex items-center justify-center text-sm flex-shrink-0">
+                          {index + 1}
+                        </span>
+                        <span className="line-clamp-1">{item.title[locale]}</span>
+                      </h3>
+                      <motion.div
+                        animate={{ rotate: isExpanded ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex-shrink-0"
+                      >
+                        <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                      </motion.div>
+                    </button>
 
+                    {/* Collapsible Content */}
+                    <AnimatePresence initial={false}>
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-6 pb-6">
                     {/* Detailed Format (새로운 형식) */}
                     {isDetailedTroubleshooting(item) ? (
                       <div className="space-y-8">
@@ -504,8 +543,13 @@ export default function ProjectDetailPage() {
                         </div>
                       </div>
                     )}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </motion.div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}
