@@ -66,6 +66,34 @@ export default function ProjectDetailPage() {
           </Link>
         </motion.div>
 
+        {/* Notion Portfolio Link */}
+        <motion.a
+          href="https://eunhee-portfolio.notion.site/2dfb6c3f6957809e9029f61517509d00"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="block mb-8 p-4 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-[#2d2d2d] dark:to-[#191919] rounded-xl border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 hover:shadow-md dark:hover:shadow-none transition-all group"
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-black dark:bg-white rounded-lg flex items-center justify-center">
+                <span className="text-lg font-bold text-white dark:text-black">N</span>
+              </div>
+              <div>
+                <p className="text-gray-900 dark:text-white font-medium text-sm sm:text-base">
+                  {locale === 'ko' ? '📋 프로젝트 상세 문서 보기' : '📋 View Detailed Project Documentation'}
+                </p>
+                <p className="text-gray-500 dark:text-white/60 text-xs sm:text-sm">
+                  {locale === 'ko' ? 'Notion에서 더 자세한 내용을 확인하세요' : 'See more details on Notion'}
+                </p>
+              </div>
+            </div>
+            <ExternalLink className="w-5 h-5 text-gray-400 dark:text-white/60 group-hover:text-gray-600 dark:group-hover:text-white transition-colors" />
+          </div>
+        </motion.a>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
