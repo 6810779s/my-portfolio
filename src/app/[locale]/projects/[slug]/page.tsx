@@ -74,11 +74,11 @@ export default function ProjectDetailPage() {
           className="mb-8"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 text-sm bg-muted text-muted-foreground rounded-full">
+            <span className="px-3 py-1.5 text-sm bg-muted text-foreground/70 dark:text-foreground/80 rounded-full">
               {project.category === 'company' ? t('filter.company') : t('filter.freelance')}
             </span>
             {project.company && (
-              <span className="text-sm text-muted-foreground">{project.company}</span>
+              <span className="text-base text-muted-foreground">{project.company}</span>
             )}
           </div>
 
@@ -98,28 +98,28 @@ export default function ProjectDetailPage() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="grid sm:grid-cols-3 gap-4 mb-8"
         >
-          <div className="p-4 bg-muted rounded-xl">
-            <div className="flex items-center gap-2 text-muted-foreground mb-1">
+          <div className="p-5 bg-muted rounded-xl">
+            <div className="flex items-center gap-2 text-muted-foreground mb-2">
               <Calendar className="w-4 h-4" />
-              <span className="text-sm">{t('period')}</span>
+              <span className="text-base">{t('period')}</span>
             </div>
-            <p className="font-medium text-foreground">{project.period}</p>
+            <p className="font-medium text-foreground text-lg">{project.period}</p>
           </div>
 
-          <div className="p-4 bg-muted rounded-xl">
-            <div className="flex items-center gap-2 text-muted-foreground mb-1">
+          <div className="p-5 bg-muted rounded-xl">
+            <div className="flex items-center gap-2 text-muted-foreground mb-2">
               <Briefcase className="w-4 h-4" />
-              <span className="text-sm">{t('role')}</span>
+              <span className="text-base">{t('role')}</span>
             </div>
-            <p className="font-medium text-foreground">{project.role[locale]}</p>
+            <p className="font-medium text-foreground text-lg">{project.role[locale]}</p>
           </div>
 
-          <div className="p-4 bg-muted rounded-xl">
-            <div className="flex items-center gap-2 text-muted-foreground mb-1">
+          <div className="p-5 bg-muted rounded-xl">
+            <div className="flex items-center gap-2 text-muted-foreground mb-2">
               <Users className="w-4 h-4" />
-              <span className="text-sm">{t('team')}</span>
+              <span className="text-base">{t('team')}</span>
             </div>
-            <p className="font-medium text-foreground">{project.team}</p>
+            <p className="font-medium text-foreground text-lg">{project.team}</p>
           </div>
         </motion.div>
 
@@ -157,7 +157,7 @@ export default function ProjectDetailPage() {
             {project.techStack.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1.5 bg-muted text-muted-foreground rounded-lg text-sm"
+                className="px-3 py-1.5 bg-muted text-foreground/70 dark:text-foreground/80 rounded-lg text-base"
               >
                 {tech}
               </span>
@@ -213,7 +213,7 @@ export default function ProjectDetailPage() {
                   <h2 className="text-xl font-semibold text-foreground mb-4">
                     {t('detailedDescription')}
                   </h2>
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                  <p className="text-base text-muted-foreground leading-relaxed whitespace-pre-line">
                     {project.detailedDescription[locale]}
                   </p>
                 </div>
@@ -228,9 +228,9 @@ export default function ProjectDetailPage() {
                   {project.features[locale].map((feature, index) => (
                     <li
                       key={index}
-                      className="flex items-start gap-3 text-muted-foreground"
+                      className="flex items-start gap-3 text-base text-muted-foreground leading-relaxed"
                     >
-                      <span className="w-1.5 h-1.5 bg-foreground rounded-full mt-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 bg-foreground rounded-full mt-2.5 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -246,17 +246,17 @@ export default function ProjectDetailPage() {
                   {project.responsibilities.map((category, categoryIndex) => (
                     <div key={categoryIndex}>
                       {/* Category Title */}
-                      <h3 className="text-base font-medium text-foreground mb-2">
+                      <h3 className="text-lg font-medium text-foreground mb-3">
                         {category.category[locale]}
                       </h3>
                       {/* Items List */}
-                      <ul className="space-y-1.5 pl-1">
+                      <ul className="space-y-2 pl-1">
                         {category.items[locale].map((item, itemIndex) => (
                           <li
                             key={itemIndex}
-                            className="text-sm text-muted-foreground flex items-start gap-2"
+                            className="text-base text-muted-foreground flex items-start gap-2"
                           >
-                            <span className="text-muted-foreground/60 mt-1.5">•</span>
+                            <span className="text-foreground/50 mt-1.5">•</span>
                             <span className="flex-1 leading-relaxed">{item}</span>
                           </li>
                         ))}
@@ -295,16 +295,16 @@ export default function ProjectDetailPage() {
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     className="p-5 bg-muted rounded-xl"
                   >
-                    <h3 className="font-semibold text-foreground mb-3">
+                    <h3 className="font-semibold text-foreground text-lg mb-3">
                       {item.category[locale]}
                     </h3>
                     <ul className="space-y-2">
                       {item.details[locale].map((detail, detailIndex) => (
                         <li
                           key={detailIndex}
-                          className="flex items-start gap-3 text-muted-foreground text-sm"
+                          className="flex items-start gap-3 text-muted-foreground text-base leading-relaxed"
                         >
-                          <span className="w-1 h-1 bg-foreground/50 rounded-full mt-2 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 bg-foreground/50 rounded-full mt-2.5 flex-shrink-0" />
                           {detail}
                         </li>
                       ))}
@@ -437,15 +437,15 @@ export default function ProjectDetailPage() {
                                     {isChosen && <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 ml-auto" />}
                                   </p>
                                   <div className="grid sm:grid-cols-2 gap-4">
-                                    <div className="flex items-start gap-3 p-3 bg-green-500/5 dark:bg-green-400/10 rounded-lg">
+                                    <div className="flex items-start gap-3 p-4 bg-green-500/5 dark:bg-green-400/10 rounded-lg">
                                       <ThumbsUp className="w-4 h-4 text-green-500 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                                      <p className="text-sm text-foreground/80 dark:text-foreground/80 leading-relaxed">
+                                      <p className="text-base text-foreground/80 dark:text-foreground/85 leading-relaxed">
                                         {candidate.pros[locale]}
                                       </p>
                                     </div>
-                                    <div className="flex items-start gap-3 p-3 bg-red-500/5 dark:bg-red-400/10 rounded-lg">
+                                    <div className="flex items-start gap-3 p-4 bg-red-500/5 dark:bg-red-400/10 rounded-lg">
                                       <ThumbsDown className="w-4 h-4 text-red-500 dark:text-red-400 mt-0.5 flex-shrink-0" />
-                                      <p className="text-sm text-foreground/80 dark:text-foreground/80 leading-relaxed">
+                                      <p className="text-base text-foreground/80 dark:text-foreground/85 leading-relaxed">
                                         {candidate.cons[locale]}
                                       </p>
                                     </div>
@@ -496,17 +496,17 @@ export default function ProjectDetailPage() {
                       </div>
                     ) : (
                       /* Simple Format (기존 형식) */
-                      <div className="space-y-4">
+                      <div className="space-y-5">
                         {/* Problem */}
                         <div className="flex items-start gap-3">
-                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
-                            <AlertCircle className="w-3.5 h-3.5 text-red-500" />
+                          <div className="flex-shrink-0 w-7 h-7 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
+                            <AlertCircle className="w-4 h-4 text-red-500 dark:text-red-400" />
                           </div>
                           <div className="flex-1">
-                            <p className="font-medium text-foreground text-sm mb-1">
+                            <p className="font-medium text-foreground text-base mb-1">
                               {t('problem')}
                             </p>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
+                            <p className="text-muted-foreground text-base leading-relaxed">
                               {item.problem[locale]}
                             </p>
                           </div>
@@ -514,14 +514,14 @@ export default function ProjectDetailPage() {
 
                         {/* Solution */}
                         <div className="flex items-start gap-3">
-                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center mt-0.5">
-                            <Lightbulb className="w-3.5 h-3.5 text-blue-500" />
+                          <div className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-500/10 flex items-center justify-center mt-0.5">
+                            <Lightbulb className="w-4 h-4 text-blue-500 dark:text-blue-400" />
                           </div>
                           <div className="flex-1">
-                            <p className="font-medium text-foreground text-sm mb-1">
+                            <p className="font-medium text-foreground text-base mb-1">
                               {t('solution')}
                             </p>
-                            <p className="text-muted-foreground text-sm whitespace-pre-line leading-relaxed">
+                            <p className="text-muted-foreground text-base whitespace-pre-line leading-relaxed">
                               {item.solution[locale]}
                             </p>
                           </div>
@@ -529,14 +529,14 @@ export default function ProjectDetailPage() {
 
                         {/* Result */}
                         <div className="flex items-start gap-3">
-                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center mt-0.5">
-                            <CheckCircle className="w-3.5 h-3.5 text-green-500" />
+                          <div className="flex-shrink-0 w-7 h-7 rounded-full bg-green-500/10 flex items-center justify-center mt-0.5">
+                            <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400" />
                           </div>
                           <div className="flex-1">
-                            <p className="font-medium text-foreground text-sm mb-1">
+                            <p className="font-medium text-foreground text-base mb-1">
                               {t('result')}
                             </p>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
+                            <p className="text-muted-foreground text-base leading-relaxed">
                               {item.result[locale]}
                             </p>
                           </div>
