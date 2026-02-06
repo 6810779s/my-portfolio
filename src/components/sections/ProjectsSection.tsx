@@ -51,10 +51,10 @@ export default function ProjectsSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
             {t("title")}
           </h2>
-          <p className="text-muted-foreground">{t("subtitle")}</p>
+          <p className="text-lg text-muted-foreground">{t("subtitle")}</p>
         </motion.div>
 
         {/* Notion Portfolio Link */}
@@ -74,7 +74,7 @@ export default function ProjectsSection() {
             <div className="w-7 h-7 bg-black dark:bg-white rounded-lg flex items-center justify-center flex-shrink-0">
               <span className="text-sm font-bold text-white dark:text-black">N</span>
             </div>
-            <span className="text-gray-700 dark:text-white/90 font-medium text-sm">
+            <span className="text-gray-700 dark:text-white font-medium text-base">
               {locale === "ko" ? "프로젝트 상세 문서 보기" : "View Detailed Documentation"}
             </span>
             <ExternalLink className="w-4 h-4 text-gray-400 dark:text-white/50 group-hover:text-gray-600 dark:group-hover:text-white/80 transition-colors" />
@@ -131,7 +131,7 @@ export default function ProjectsSection() {
                 <div className="h-full p-6 bg-background rounded-xl border border-border hover:border-foreground/20 transition-colors flex flex-col">
                   {/* Category Badge */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded">
+                    <span className="px-2.5 py-1 text-sm bg-muted text-foreground/70 dark:text-foreground/80 rounded">
                       {project.category === "company"
                         ? t("filter.company")
                         : t("filter.freelance")}
@@ -154,28 +154,28 @@ export default function ProjectsSection() {
                   </h3>
 
                   {/* Period */}
-                  <p className="text-sm text-muted-foreground mb-3">
+                  <p className="text-base text-muted-foreground mb-3">
                     {project.period}
                   </p>
 
                   {/* Description */}
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                  <p className="text-base text-muted-foreground mb-4 line-clamp-3 leading-relaxed">
                     {project.description[locale]}
                   </p>
 
                   {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-1 mb-4 mt-auto h-[45px] overflow-hidden content-start">
-                    {project.techStack.slice(0, 4).map((tech, techIndex) => (
+                  <div className="flex flex-wrap gap-1.5 mb-4 mt-auto min-h-[60px] content-start">
+                    {project.techStack.slice(0, 5).map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded"
+                        className="px-2.5 py-1 text-sm bg-muted text-foreground/70 dark:text-foreground/80 rounded"
                       >
                         {tech}
                       </span>
                     ))}
-                    {project.techStack.length > 4 && (
-                      <span className="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded">
-                        +{project.techStack.length - 4}
+                    {project.techStack.length > 5 && (
+                      <span className="px-2.5 py-1 text-sm bg-muted text-foreground/70 dark:text-foreground/80 rounded">
+                        +{project.techStack.length - 5}
                       </span>
                     )}
                   </div>
@@ -183,7 +183,7 @@ export default function ProjectsSection() {
                   {/* View Detail Link */}
                   <Link
                     href={`/${locale}/projects/${project.slug}`}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover:underline"
+                    className="inline-flex items-center gap-1 text-base font-medium text-foreground hover:underline"
                   >
                     {t("viewDetail")}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

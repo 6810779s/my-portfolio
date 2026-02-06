@@ -37,10 +37,10 @@ export default function SkillsSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
             {t('title')}
           </h2>
-          <p className="text-muted-foreground">{t('subtitle')}</p>
+          <p className="text-lg text-muted-foreground">{t('subtitle')}</p>
         </motion.div>
 
         <motion.div
@@ -63,7 +63,7 @@ export default function SkillsSection() {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-3 py-1 text-sm bg-muted text-muted-foreground rounded-full"
+                    className="px-3 py-1.5 text-sm bg-muted text-foreground/80 dark:text-foreground/90 rounded-full"
                   >
                     {skill}
                   </span>

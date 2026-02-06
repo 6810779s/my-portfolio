@@ -38,10 +38,10 @@ export default function ContactSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
             {t('title')}
           </h2>
-          <p className="text-muted-foreground">{t('subtitle')}</p>
+          <p className="text-lg text-muted-foreground">{t('subtitle')}</p>
         </motion.div>
 
         <motion.p
@@ -49,7 +49,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"
+          className="text-center text-lg text-muted-foreground mb-12 max-w-2xl mx-auto"
         >
           {t('description')}
         </motion.p>
@@ -76,8 +76,8 @@ export default function ContactSection() {
               className="p-6 bg-muted rounded-xl text-center hover:bg-muted/80 transition-colors group"
             >
               <contact.icon className="w-8 h-8 mx-auto mb-4 text-foreground group-hover:scale-110 transition-transform" />
-              <p className="text-sm text-muted-foreground mb-1">{contact.label}</p>
-              <p className="text-sm font-medium text-foreground break-all">
+              <p className="text-base text-muted-foreground mb-1">{contact.label}</p>
+              <p className="text-base font-medium text-foreground break-all">
                 {contact.value}
               </p>
             </motion.a>

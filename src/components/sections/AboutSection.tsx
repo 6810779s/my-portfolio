@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Briefcase, FolderOpen, GraduationCap, BookOpen, Award, Languages } from 'lucide-react';
+import { Briefcase, FolderOpen, GraduationCap, BookOpen, Languages } from 'lucide-react';
 import { experiences, calculateTotalExperience } from '@/data/experiences';
 import { projects } from '@/data/projects';
 import { education, training, certifications } from '@/data/background';
@@ -21,10 +21,10 @@ export default function AboutSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
             {t('title')}
           </h2>
-          <p className="text-muted-foreground">{t('subtitle')}</p>
+          <p className="text-lg text-muted-foreground">{t('subtitle')}</p>
         </motion.div>
 
         <motion.div
@@ -34,27 +34,27 @@ export default function AboutSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          <p className="text-muted-foreground leading-relaxed mb-10 text-center whitespace-pre-line">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-12 text-center whitespace-pre-line">
             {t('description')}
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mb-12">
-            <div className="p-5 bg-muted rounded-xl text-center">
-              <Briefcase className="w-7 h-7 text-foreground mb-2 mx-auto" />
-              <p className="text-2xl font-bold text-foreground mb-1">
+          <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mb-14">
+            <div className="p-6 bg-muted rounded-xl text-center">
+              <Briefcase className="w-8 h-8 text-foreground mb-3 mx-auto" />
+              <p className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
                 {calculateTotalExperience(experiences, locale)}
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 {t('experience.label')}
               </p>
             </div>
-            <div className="p-5 bg-muted rounded-xl text-center">
-              <FolderOpen className="w-7 h-7 text-foreground mb-2 mx-auto" />
-              <p className="text-2xl font-bold text-foreground mb-1">
+            <div className="p-6 bg-muted rounded-xl text-center">
+              <FolderOpen className="w-8 h-8 text-foreground mb-3 mx-auto" />
+              <p className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
                 {projects.length}+
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 {t('projects.label')}
               </p>
             </div>
@@ -69,22 +69,22 @@ export default function AboutSection() {
             className="grid md:grid-cols-3 gap-6"
           >
             {/* Education */}
-            <div className="p-5 bg-muted rounded-xl">
-              <div className="flex items-center gap-2 mb-4">
-                <GraduationCap className="w-5 h-5 text-blue-500" />
-                <h3 className="font-semibold text-foreground">
+            <div className="p-6 bg-muted rounded-xl">
+              <div className="flex items-center gap-2 mb-5">
+                <GraduationCap className="w-5 h-5 text-blue-500 dark:text-blue-400" />
+                <h3 className="font-semibold text-foreground text-lg">
                   {t('background.education')}
                 </h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {education.map((edu, index) => (
-                  <div key={index} className="border-l-2 border-blue-500/30 pl-3">
-                    <p className="text-xs text-muted-foreground mb-1">{edu.period}</p>
-                    <p className="text-sm font-medium text-foreground">
+                  <div key={index} className="border-l-2 border-blue-500/40 dark:border-blue-400/40 pl-4">
+                    <p className="text-sm text-muted-foreground mb-1">{edu.period}</p>
+                    <p className="text-base font-medium text-foreground leading-snug">
                       {edu.school[locale]}
                     </p>
                     {edu.major && (
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-sm text-muted-foreground mt-1">
                         {edu.major[locale]}
                       </p>
                     )}
@@ -94,21 +94,21 @@ export default function AboutSection() {
             </div>
 
             {/* Training */}
-            <div className="p-5 bg-muted rounded-xl">
-              <div className="flex items-center gap-2 mb-4">
-                <BookOpen className="w-5 h-5 text-green-500" />
-                <h3 className="font-semibold text-foreground">
+            <div className="p-6 bg-muted rounded-xl">
+              <div className="flex items-center gap-2 mb-5">
+                <BookOpen className="w-5 h-5 text-green-500 dark:text-green-400" />
+                <h3 className="font-semibold text-foreground text-lg">
                   {t('background.training')}
                 </h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {training.map((item, index) => (
-                  <div key={index} className="border-l-2 border-green-500/30 pl-3">
-                    <p className="text-xs text-muted-foreground mb-1">{item.period}</p>
-                    <p className="text-sm font-medium text-foreground">
+                  <div key={index} className="border-l-2 border-green-500/40 dark:border-green-400/40 pl-4">
+                    <p className="text-sm text-muted-foreground mb-1">{item.period}</p>
+                    <p className="text-base font-medium text-foreground leading-snug">
                       {item.institution[locale]}
                     </p>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-sm text-muted-foreground mt-1">
                       {item.program[locale]}
                     </p>
                   </div>
@@ -117,22 +117,22 @@ export default function AboutSection() {
             </div>
 
             {/* Certifications */}
-            <div className="p-5 bg-muted rounded-xl">
-              <div className="flex items-center gap-2 mb-4">
-                <Languages className="w-5 h-5 text-purple-500" />
-                <h3 className="font-semibold text-foreground">
+            <div className="p-6 bg-muted rounded-xl">
+              <div className="flex items-center gap-2 mb-5">
+                <Languages className="w-5 h-5 text-purple-500 dark:text-purple-400" />
+                <h3 className="font-semibold text-foreground text-lg">
                   {t('background.certifications')}
                 </h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="border-l-2 border-purple-500/30 pl-3">
-                    <p className="text-xs text-muted-foreground mb-1">{cert.date}</p>
-                    <p className="text-sm font-medium text-foreground">
+                  <div key={index} className="border-l-2 border-purple-500/40 dark:border-purple-400/40 pl-4">
+                    <p className="text-sm text-muted-foreground mb-1">{cert.date}</p>
+                    <p className="text-base font-medium text-foreground leading-snug">
                       {cert.name[locale]}
                     </p>
                     {cert.grade && (
-                      <span className="inline-block mt-1 px-2 py-0.5 text-xs font-medium bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded">
+                      <span className="inline-block mt-2 px-3 py-1 text-sm font-semibold bg-purple-500/15 text-purple-600 dark:text-purple-300 rounded-md">
                         {cert.grade}
                       </span>
                     )}

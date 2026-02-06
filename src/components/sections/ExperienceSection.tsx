@@ -18,10 +18,10 @@ export default function ExperienceSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
             {t('title')}
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             {t('subtitle')} · {locale === 'ko' ? '총 경력' : 'Total'}: {calculateTotalExperience(experiences, locale)}
           </p>
         </motion.div>
@@ -57,15 +57,15 @@ export default function ExperienceSection() {
                 }`}
               >
                 <div className="p-6 bg-muted rounded-xl">
-                  <div className={`flex flex-wrap items-center gap-2 mb-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
-                    <span className="text-sm text-muted-foreground">
+                  <div className={`flex flex-wrap items-center gap-2 mb-3 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
+                    <span className="text-base text-muted-foreground">
                       {formatPeriod(exp.startDate, exp.endDate, locale)}
                     </span>
-                    <span className="text-xs text-accent font-medium px-2 py-0.5 bg-accent/10 rounded">
+                    <span className="text-sm text-foreground/80 dark:text-foreground/90 font-medium px-2.5 py-1 bg-accent/10 rounded">
                       {calculateDuration(exp.startDate, exp.endDate, locale)}
                     </span>
                     {exp.isCurrent && (
-                      <span className="px-2 py-0.5 text-xs bg-foreground text-background rounded-full">
+                      <span className="px-2.5 py-1 text-sm bg-foreground text-background rounded-full font-medium">
                         {t('current')}
                       </span>
                     )}
@@ -74,7 +74,7 @@ export default function ExperienceSection() {
                   <h3 className="text-xl font-bold text-foreground mb-1">
                     {exp.company[locale]}
                   </h3>
-                  <p className="text-accent font-medium mb-4">
+                  <p className="text-foreground/80 dark:text-foreground/90 font-medium mb-4">
                     {exp.position[locale]}
                   </p>
 
@@ -82,7 +82,7 @@ export default function ExperienceSection() {
                     {exp.description[locale].map((desc, descIndex) => (
                       <li
                         key={descIndex}
-                        className="text-sm text-muted-foreground"
+                        className="text-base text-muted-foreground leading-relaxed"
                       >
                         {desc}
                       </li>
