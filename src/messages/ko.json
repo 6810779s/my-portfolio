@@ -25,6 +25,11 @@
     },
     "projects": {
       "label": "프로젝트"
+    },
+    "background": {
+      "education": "학력",
+      "training": "교육",
+      "certifications": "어학"
     }
   },
   "skills": {

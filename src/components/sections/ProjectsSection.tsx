@@ -49,12 +49,36 @@ export default function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
             {t("title")}
           </h2>
           <p className="text-muted-foreground">{t("subtitle")}</p>
+        </motion.div>
+
+        {/* Notion Portfolio Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="flex justify-center mb-8"
+        >
+          <a
+            href="https://eunhee-portfolio.notion.site/2dfb6c3f6957809e9029f61517509d00"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-[#2d2d2d] dark:to-[#232323] rounded-xl border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 hover:shadow-md dark:hover:shadow-none transition-all group"
+          >
+            <div className="w-7 h-7 bg-black dark:bg-white rounded-lg flex items-center justify-center flex-shrink-0">
+              <span className="text-sm font-bold text-white dark:text-black">N</span>
+            </div>
+            <span className="text-gray-700 dark:text-white/90 font-medium text-sm">
+              {locale === "ko" ? "프로젝트 상세 문서 보기" : "View Detailed Documentation"}
+            </span>
+            <ExternalLink className="w-4 h-4 text-gray-400 dark:text-white/50 group-hover:text-gray-600 dark:group-hover:text-white/80 transition-colors" />
+          </a>
         </motion.div>
 
         {/* Filter Tabs */}

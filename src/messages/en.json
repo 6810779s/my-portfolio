@@ -25,6 +25,11 @@
     },
     "projects": {
       "label": "Projects"
+    },
+    "background": {
+      "education": "Education",
+      "training": "Training",
+      "certifications": "Languages"
     }
   },
   "skills": {
